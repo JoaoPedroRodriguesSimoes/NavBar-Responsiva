@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://images.unsplash.com/photo-1677432658720-3d84f9d657b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    /* background-position: center;  Centraliza a imagem caso necessário, não foi preciso no modelo.*/
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: orange;
+}
+
+/*Header*/
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.barra{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+.logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+.links{
+    display: flex;
+    gap: 3rem;
+}
+
+.alternar_bnt{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.acao_bnt{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.acao_bnt:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.acao_bnt:active{
+    scale: 0.95;
+}
+
+.menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu.open{
+    height: 240px;
+}
+
+.menu li{
+    padding: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .acao_bnt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Home */
+section#home{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#home h1{
+    font-size: rem;
+    margin-bottom: 1rem;
+}
+
+/* Design Responsivo */
+@media(max-width: 992px){
+    .barra .links,
+    .barra .acao_bnt{
+        display: none;
+    }
+
+    .barra .alternar_bnt{
+        display: block;
+    }
+
+    .menu{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    .menu{
+        left: 2rem;
+        width: unset;
+    }
+}
